@@ -1,9 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-# Git branch shown in local repositories
-export DOTBASH=~/.bash
-source $DOTBASH/main.sh
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -155,15 +151,13 @@ alias ack='ack-grep'
 # alias vim to gvim
 alias vim=gvim
 
+# todo list aliases
+if [ -f ~/.todo ]; then
+. ~/.todo
+fi
+
 ####################  Hivelocity ####################
 # hivelocity path aliases
 alias hv="cd ~/www/hivelocity/hivelocity.net/hivelocity"
 alias sn="cd ~/www/sparknode"
 alias hvp="cd ~/www/hvp"
-
-####################  List Application ####################
-# Alias for todo list script
-alias w='python ~/www/todooo/todo.py -t ~/Dropbox/tasks -l hivelocity '
-alias p='python ~/www/todooo/todo.py -t ~/Dropbox/tasks -l personal '
-alias g='python ~/www/todooo/todo.py -t ~/Dropbox/tasks -l groceries '
-alias ff='python ~/www/todooo/todo.py -t ~/Dropbox/tasks -l ff_summit '
