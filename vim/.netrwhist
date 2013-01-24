@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/usr/lib/php5/20090626'
+let g:netrw_dirhist_2='/etc/apache2/sites-enabled'
+let g:netrw_dirhist_3='/home/user/www/hvp/templates/dashboard'
+let g:netrw_dirhist_4='/home/user/www/hvp'
+let g:netrw_dirhist_5='/home/user/www/hvp/tests'
+let g:netrw_dirhist_6='/home/user/www/hvp'
+let g:netrw_dirhist_7='/home/user/www/python-ubersmith'
+let g:netrw_dirhist_8='/home/user/www/hvp/public/css'
