@@ -40,7 +40,6 @@ let g:ctrlp_custom_ignore = {
 " LESS Syntax
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
-
 """"""""""""""""""""""""""""""""""""""""
 " General VIM
 """"""""""""""""""""""""""""""""""""""""
@@ -164,6 +163,9 @@ nnoremap <leader>f :CtrlPClearCache<cr>
 " build bundles
 nnoremap <leader>i :BundleInstall
 
+" rope stuff
+map <leader>g :call RopeGotoDefinition()<CR>
+map <leader>d :call RopeShowDoc()<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " Searching

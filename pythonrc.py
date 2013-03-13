@@ -30,3 +30,21 @@ atexit.register(save_history)
 
 # do not litter!
 del os, atexit, readline, main, save_history, HISTORY_PATH, HISTORY_LENGTH
+
+
+# project specific imports
+# try:
+#     # django
+#     from django.contrib.auth.models import User
+
+#     # myvelocity
+#     from uberdb.models import *
+#     from uberauth.uber_pass import *
+#     try:
+#         u = User.objects.get(username='client-1077')
+#         p = u.get_profile()
+#         uu = p.get_uber_user()
+#     except:
+#         pass
+# except ImportError:
+#     pass
