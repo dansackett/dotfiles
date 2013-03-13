@@ -1,9 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
-# Git branch shown in local repositories
-export DOTBASH=~/.bash
-source $DOTBASH/main.sh
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
