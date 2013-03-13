@@ -155,6 +155,11 @@ alias ack='ack-grep'
 # Alias vim to gvim
 alias vim=gvim
 
+# todo list aliases
+if [ -f ~/.todo ]; then
+. ~/.todo
+fi
+
 ####################  Hivelocity ####################
 # Hivelocity path aliases
 alias hv="cd ~/www/hivelocity/hivelocity.net/hivelocity"
@@ -163,11 +168,3 @@ alias hvp="cd ~/www/hvp"
 
 # Alias openvpn to work
 alias openvpn="sudo openvpn --config ~/openvpn/client1.ovpn"
-
-
-####################  List Application ####################
-# Alias for todo list script
-alias w='python ~/www/todooo/todo.py -t ~/Dropbox/tasks -l hivelocity '
-alias p='python ~/www/todooo/todo.py -t ~/Dropbox/tasks -l personal '
-alias g='python ~/www/todooo/todo.py -t ~/Dropbox/tasks -l groceries '
-alias ff='python ~/www/todooo/todo.py -t ~/Dropbox/tasks -l ff_summit '
