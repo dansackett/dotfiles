@@ -49,9 +49,9 @@ function current_git_branch {
 
 # Use colored prompt
 if [ "$color_prompt" = yes ]; then
-    PS1="\[\033[01;34m\]\w\[\033[00m\] \$(current_git_branch)\$ "
+    PS1="\[\033[01;34m\]\w\[\033[00m\] \$(current_git_branch)"
 else
-    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\ $(current_git_branch)\$  "
+    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\ $(current_git_branch)"
 fi
 unset color_prompt force_color_prompt
 
@@ -63,6 +63,7 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+PS1="\n$PS1\n$ "
 
 # Enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -157,10 +158,5 @@ if [ -f ~/.todo ]; then
 fi
 
 ####################  Hivelocity ####################
-# Hivelocity path aliases
-alias hv="cd ~/www/hivelocity/hivelocity.net/hivelocity"
-alias sn="cd ~/www/sparknode"
-alias hvp="cd ~/www/hvp"
-
 # Alias openvpn to work
 alias openvpn="sudo openvpn --config ~/openvpn/client1.ovpn"
