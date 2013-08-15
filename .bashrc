@@ -42,11 +42,21 @@ function current_git_branch {
 
 # Use colored prompt
 if [ "$color_prompt" = yes ]; then
-    PS1="\u\[\033[01;34m\]@\h: \w\[\033[00m\] \$(current_git_branch)"
+    PS1="\[\033[01;34m\]\w\[\033[00m\] \$(current_git_branch)"
 else
-    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\ $(current_git_branch)"
+    PS1="${debian_chroot:+($debian_chroot)}\w\ \$(current_git_branch)"
 fi
 unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+PS1="\n$PS1\n$ "
 
 # Enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
