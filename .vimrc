@@ -17,13 +17,9 @@ Bundle 'gmarik/vundle'
 " github repos
 Bundle 'vim-scripts/bufkill.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'roman/golden-ratio'
 Bundle 'klen/python-mode'
-Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-commentary'
 Bundle 'groenewege/vim-less'
-Bundle 'tpope/vim-surround'
-Bundle 'mattn/zencoding-vim'
 
 " python mode
 let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
@@ -128,7 +124,6 @@ if has("autocmd")
  augroup END
 endif
 
-
 """"""""""""""""""""""""""""""""""""""""
 " Mappings
 """"""""""""""""""""""""""""""""""""""""
@@ -136,7 +131,7 @@ endif
 " set leader
 let mapleader = ","
 
-" switch between files
+" switch between files with <leader><leader>
 nnoremap <leader><leader> <c-^>
 
 " easier window navigation
@@ -191,7 +186,7 @@ set hlsearch
 """"""""""""""""""""""""""""""""""""""""
 
 " keep cursor somewhat centered
-set scrolloff=25
+set scrolloff=3
 
 " highlight current line
 :set cursorline
@@ -230,7 +225,7 @@ set colorcolumn=80
 highlight ColorColumn guibg=gray16
 highlight ColorColumn ctermbg=Black
 
-" extra whitespace sucks
+" extra whitespace sucks, make it RED
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/

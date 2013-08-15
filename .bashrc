@@ -13,13 +13,6 @@ HISTFILESIZE=2000
 # Append to the history file, don't overwrite it
 shopt -s histappend
 
-# Check the window size after each command and, if necessary,
-# Update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# Make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 # Set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -54,16 +47,6 @@ else
     PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\ $(current_git_branch)"
 fi
 unset color_prompt force_color_prompt
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-PS1="\n$PS1\n$ "
 
 # Enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -113,7 +96,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-####################  File Commands ####################
+#################### File Commands ####################
 # Some ls aliases
 alias l="ls -l ${colorflag}"
 alias la="ls -la ${colorflag}"
@@ -128,20 +111,13 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias .....="cd ../../../.."
 
-####################  Util ########### #########
+#################### Util #####################
 # use xclip
 alias xclip="xclip -sel clip"
 
-# Tail apache log
-alias alog="sudo tail -f /var/log/apache2/error.log"
-
 # IP address
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-
-# Alias for ACK-GREP
-alias ack='ack-grep'
 
 # Enable aliases to be sudoed
 alias sudo='sudo '
@@ -157,6 +133,11 @@ if [ -f ~/.todo ]; then
 . ~/.todo
 fi
 
-####################  Hivelocity ####################
+#################### Hivelocity ####################
 # Alias openvpn to work
 alias openvpn="sudo openvpn --config ~/openvpn/client1.ovpn"
+alias hvupdate="bash ~/hvupdate.sh"
+
+#################### Various` ####################
+# Make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
