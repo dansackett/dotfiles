@@ -18,4 +18,4 @@
 	di = diff
 	dc = diff --cached
 [core]
-	excludesfile = /home/user/.gitignore
+	excludesfile = ~/.gitignore
