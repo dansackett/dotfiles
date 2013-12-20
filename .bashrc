@@ -83,12 +83,13 @@ fi
 
 # Virtualenv stuff
 export WORKON_HOME=~/.virtualenvs
+export PROJECT_HOME=~/projects
 source /usr/local/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=~/.virtualenvs
 alias mkvirtualenv='mkvirtualenv --no-site-packages --distribute'
 
 # Stop python from generating bytecode files
-export PYTHONDONTWRITEBYTECODE=1
+# export PYTHONDONTWRITEBYTECODE=1
 
 # Load .pythonrc.py in the python interpreter
 [ -f ~/.pythonrc.py ] && export PYTHONSTARTUP=~/.pythonrc.py
