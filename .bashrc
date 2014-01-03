@@ -56,7 +56,7 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-PS1="\n$PS1\n$ "
+PS1="\n\n$PS1\n$ "
 
 # Enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
