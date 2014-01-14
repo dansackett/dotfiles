@@ -20,6 +20,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'klen/python-mode'
 Bundle 'tpope/vim-commentary'
 Bundle 'groenewege/vim-less'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " python mode
 let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
@@ -204,7 +208,7 @@ syntax on
 "tell the term has 256 colors
 set t_Co=256
 
-colorscheme lucius
+colorscheme vydark
 set guitablabel=%M%t
 set lines=40
 set columns=115

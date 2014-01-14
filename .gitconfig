@@ -1,6 +1,7 @@
 [user]
 	name = Dan Sackett
 	email = danesackett@gmail.com
+    IdentityFile = ~/.ssh/id_rsa
 [credential]
 	helper = cache -- timeout=3600
 [color]
