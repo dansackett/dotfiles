@@ -33,7 +33,7 @@ let g:pymode_breakpoint_key = '<leader>d'
 
 " custom file ignores
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|doctree)$',
   \ 'file': '\v\.(exe|so|dll|pyc)$',
   \ }
 
