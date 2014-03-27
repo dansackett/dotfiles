@@ -209,7 +209,7 @@ syntax on
 "tell the term has 256 colors
 set t_Co=256
 
-colorscheme vydark
+colorscheme darkside
 set guitablabel=%M%t
 set lines=40
 set columns=115
@@ -219,13 +219,13 @@ set guifont=Inconsolata\ Medium\ 10
 " invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
-highlight CursorLine guibg=#222
-highlight LineNr guifg=#666
-highlight Cursor guibg=#555
+highlight CursorLine guibg=#333
+highlight LineNr guifg=#444
+highlight Cursor guibg=#444
 
 " highlight col 80
 set colorcolumn=80
-highlight ColorColumn guibg=#222
+highlight ColorColumn guibg=#333
 highlight ColorColumn ctermbg=Black
 
 " extra whitespace sucks, make it RED
