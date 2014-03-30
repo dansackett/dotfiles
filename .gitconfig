@@ -22,3 +22,4 @@
 	dc = diff --cached
 [core]
 	excludesfile = ~/.gitignore
+	filemode = false

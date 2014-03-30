@@ -24,6 +24,7 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
+Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
 
 " python mode
 let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
@@ -33,7 +34,7 @@ let g:pymode_breakpoint_key = '<leader>d'
 
 " custom file ignores
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|doctree)$',
   \ 'file': '\v\.(exe|so|dll|pyc)$',
   \ }
 
@@ -208,25 +209,23 @@ syntax on
 "tell the term has 256 colors
 set t_Co=256
 
-colorscheme vydark
+colorscheme darkside
 set guitablabel=%M%t
 set lines=40
 set columns=115
 set guifont=Inconsolata\ Medium\ 10
-
-" enable display of invisible characters
-set list
-
-" use the same symbols as textmate for tabs and eols
-set listchars=tab:▸\ ,eol:¬
+" set guifont=Monaco\ 10
 
 " invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
+highlight CursorLine guibg=#333
+highlight LineNr guifg=#444
+highlight Cursor guibg=#444
 
 " highlight col 80
 set colorcolumn=80
-highlight ColorColumn guibg=gray16
+highlight ColorColumn guibg=#333
 highlight ColorColumn ctermbg=Black
 
 " extra whitespace sucks, make it RED
