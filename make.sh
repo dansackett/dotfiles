@@ -34,3 +34,7 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/$file
 done
+
+# Setup terminator config
+sudo cp terminator/config ~/.config/terminator/config
+echo "Setup Terminator config"
