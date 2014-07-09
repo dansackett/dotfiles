@@ -36,5 +36,5 @@ for file in $files; do
 done
 
 # Setup terminator config
-sudo cp terminator/config ~/.config/terminator/config
+ln -s terminator/config ~/.config/terminator/config
 echo "Setup Terminator config"
