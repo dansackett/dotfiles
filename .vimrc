@@ -25,6 +25,8 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
+Bundle "kchmck/vim-coffee-script"
+Bundle "cakebaker/scss-syntax.vim"
 
 " python mode
 let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
