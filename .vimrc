@@ -31,6 +31,9 @@ Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
 Bundle "Lokaltog/vim-easymotion"
 
+" easy motion
+map <Leader> <Plug>(easymotion-prefix)
+
 " python mode
 let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
 let g:pymode_lint_cwindow = 0
