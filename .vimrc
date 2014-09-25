@@ -17,7 +17,6 @@ Bundle 'gmarik/vundle'
 " github repos
 Bundle 'vim-scripts/bufkill.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'klen/python-mode'
 Bundle 'tpope/vim-commentary'
 Bundle 'groenewege/vim-less'
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -29,7 +28,6 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "cakebaker/scss-syntax.vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
-Bundle "Lokaltog/vim-easymotion"
 
 " easy motion
 map <Leader> <Plug>(easymotion-prefix)
@@ -217,7 +215,7 @@ syntax on
 "tell the term has 256 colors
 set t_Co=256
 
-colorscheme darkside
+colorscheme solarflare
 set guitablabel=%M%t
 set lines=40
 set columns=115
