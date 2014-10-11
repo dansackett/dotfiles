@@ -28,9 +28,7 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "cakebaker/scss-syntax.vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
-
-" easy motion
-map <Leader> <Plug>(easymotion-prefix)
+Bundle 'chilicuil/vim-sml-coursera'
 
 " python mode
 let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
@@ -172,6 +170,9 @@ nnoremap <leader>i :BundleInstall
 " rope stuff
 map <leader>g :call RopeGotoDefinition()<CR>
 map <leader>d :call RopeShowDoc()<CR>
+
+" /// for vim-commentary
+nmap /// <Plug>CommentaryLine
 
 """"""""""""""""""""""""""""""""""""""""
 " Searching
