@@ -86,7 +86,6 @@ export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=~/projects
 source /usr/local/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=~/.virtualenvs
-alias mkvirtualenv='mkvirtualenv --no-site-packages --distribute'
 
 # Stop python from generating bytecode files
 # export PYTHONDONTWRITEBYTECODE=1
@@ -139,15 +138,13 @@ alias ack='ack-grep'
 # Alias vim to gvim
 alias vim=gvim
 
+# Open Sublime in current folder
+alias subl='sublime-text .'
+
 # todo list aliases
 if [ -f ~/.todo ]; then
 . ~/.todo
 fi
-
-#################### Hivelocity ####################
-# Alias openvpn to work
-alias openvpn="sudo openvpn --config ~/openvpn/client1.ovpn"
-alias hvupdate="bash ~/hvupdate.sh"
 
 #################### Various` ####################
 # Make less more friendly for non-text input files, see lesspipe(1)
