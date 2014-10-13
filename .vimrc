@@ -29,6 +29,7 @@ Bundle "cakebaker/scss-syntax.vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
 Bundle 'chilicuil/vim-sml-coursera'
+Bundle 'junegunn/limelight.vim'
 
 " python mode
 let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
