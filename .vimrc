@@ -28,7 +28,6 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "cakebaker/scss-syntax.vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
-Bundle 'chilicuil/vim-sml-coursera'
 Bundle 'junegunn/limelight.vim'
 
 " python mode
@@ -240,3 +239,4 @@ highlight ColorColumn ctermbg=Black
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+:set tags=/tags
