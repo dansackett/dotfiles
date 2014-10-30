@@ -15,10 +15,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " github repos
-Bundle 'vim-scripts/bufkill.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-commentary'
-Bundle 'groenewege/vim-less'
+Bundle "vim-scripts/bufkill.vim"
+Bundle "kien/ctrlp.vim"
+Bundle "tpope/vim-commentary"
+Bundle "groenewege/vim-less"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
@@ -28,8 +28,8 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "cakebaker/scss-syntax.vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
-Bundle 'chilicuil/vim-sml-coursera'
-Bundle 'junegunn/limelight.vim'
+Bundle "junegunn/limelight.vim"
+Bundle "craigemery/vim-autotag"
 
 " python mode
 let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
@@ -49,6 +49,9 @@ nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 """"""""""""""""""""""""""""""""""""""""
 " General VIM
 """"""""""""""""""""""""""""""""""""""""
+
+" ctags
+set tags=~/.vimtags
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -134,6 +137,8 @@ if has("autocmd")
  augroup END
 endif
 
+" :autocmd BufNewFile * :Limelight
+
 """"""""""""""""""""""""""""""""""""""""
 " Mappings
 """"""""""""""""""""""""""""""""""""""""
@@ -156,6 +161,9 @@ map 0 ^
 " set jj to exit insert mode
 imap jj <Esc>
 
+" Map ,g to tag definition
+map <leader>g g]
+
 " reselect when indenting
 vnoremap < <gv
 vnoremap > >gv
@@ -167,10 +175,6 @@ nnoremap <leader>f :CtrlPClearCache<cr>
 
 " build bundles
 nnoremap <leader>i :BundleInstall
-
-" rope stuff
-map <leader>g :call RopeGotoDefinition()<CR>
-map <leader>d :call RopeShowDoc()<CR>
 
 " /// for vim-commentary
 nmap /// <Plug>CommentaryLine
