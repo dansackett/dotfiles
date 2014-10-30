@@ -1,5 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -23,48 +21,45 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# Colored prompt
-force_color_prompt=yes
-
 # Check for colored support
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	color_prompt=yes
-    else
-	color_prompt=
-    fi
+if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+    color_prompt=yes
+else
+    color_prompt=
 fi
 
 # Add current git branch to terminal
 function current_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$([[ `git status --porcelain 2> /dev/null` ]] && echo "*")]/"
+    # Find current Git changes
+    changes=$([[ `git status --porcelain 2> /dev/null` ]] && echo -e "changes")
+
+    # If changes, red branch. If not, green branch
+    if [ "$changes" ]; then
+        branch_name=$(echo -e "──[ \e[1m\e[31m\1\e[0m\e[0m ]")
+    else
+        branch_name=$(echo -e "──[ \e[1m\e[32m\1\e[0m\e[0m ]")
+    fi
+
+    # Find current git branch
+    current_branch='/^[^*]/d'
+
+    # Final branch output
+    git branch --no-color 2> /dev/null | sed -e $current_branch -e "s/* \(.*\)/$branch_name/"
 }
 
 # Use colored prompt
 if [ "$color_prompt" = yes ]; then
-    PS1="\[\033[01;34m\]\w\[\033[00m\] \$(current_git_branch)"
+    PS1="\n┌─[ \e[32m\e[1m\u\e[0m\e[0m ]──[ \e[1m@\e[0m ]──[ \e[1m\e[94m\w\e[0m\e[0m ]\$(current_git_branch)\n└─[ \e[1m$\e[0m "
 else
     PS1="${debian_chroot:+($debian_chroot)}\w\ \$(current_git_branch)"
 fi
-unset color_prompt force_color_prompt
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
-PS1="\n$PS1\n$ "
+unset color_prompt force_color_prompt
 
 # Enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-# Add RVM to path
-PATH=$PATH:$HOME/.rvm/bin
 
 # Make gvim act properly with menu nonsense
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -89,7 +84,7 @@ export PIP_VIRTUALENV_BASE=~/.virtualenvs
 alias mkvirtualenv='mkvirtualenv --no-site-packages --distribute'
 
 # Stop python from generating bytecode files
-# export PYTHONDONTWRITEBYTECODE=1
+export PYTHONDONTWRITEBYTECODE=1
 
 # Load .pythonrc.py in the python interpreter
 [ -f ~/.pythonrc.py ] && export PYTHONSTARTUP=~/.pythonrc.py
@@ -133,22 +128,9 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 # Enable aliases to be sudoed
 alias sudo='sudo '
 
-# Alias for ACK-GREP
-alias ack='ack-grep'
-
 # Alias vim to gvim
 alias vim=gvim
 
-# todo list aliases
-if [ -f ~/.todo ]; then
-. ~/.todo
-fi
-
-#################### Hivelocity ####################
-# Alias openvpn to work
-alias openvpn="sudo openvpn --config ~/openvpn/client1.ovpn"
-alias hvupdate="bash ~/hvupdate.sh"
-
-#################### Various` ####################
+#################### Various ####################
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
