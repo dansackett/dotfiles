@@ -31,12 +31,6 @@ Bundle "tpope/vim-surround"
 Bundle "junegunn/limelight.vim"
 Bundle "craigemery/vim-autotag"
 
-" python mode
-let g:pymode_lint_checker = "pylint,pyflakes,pep8,mccabe"
-let g:pymode_lint_cwindow = 0
-let g:pymode_virtualenv = 1
-let g:pymode_breakpoint_key = '<leader>d'
-
 " custom file ignores
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|doctree)$',
@@ -226,7 +220,6 @@ set guitablabel=%M%t
 set lines=40
 set columns=115
 set guifont=Inconsolata\ Medium\ 10
-" set guifont=Monaco\ 10
 
 " invisible character colors
 highlight NonText guifg=#4a4a59

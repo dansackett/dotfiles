@@ -28,5 +28,18 @@ if os.path.exists(HISTORY_PATH):
 atexit.register(save_history)
 
 
+# If we're working with a Django project, set up the environment
+if 'DJANGO_SETTINGS_MODULE' in os.environ:
+    from django.db.models.loading import get_models
+    from django.conf import settings
+
+    class DjangoModels(object):
+        """Loop through all the models in INSTALLED_APPS and import them."""
+        def __init__(self):
+            for m in get_models():
+                setattr(self, m.__name__, m)
+
+    models = DjangoModels()
+
 # do not litter!
 del os, atexit, readline, main, save_history, HISTORY_PATH, HISTORY_LENGTH
