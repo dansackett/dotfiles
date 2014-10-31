@@ -43,7 +43,7 @@ function current_git_branch {
 
 # Use colored prompt
 if [ "$color_prompt" = yes ]; then
-    PS1="\n┌─[ \e[32m\e[1m\u\e[0m\e[0m ]──[ \e[1m\e[94m\w\e[0m\e[0m ]\$(current_git_branch)\n└─[ \e[1m$\e[0m "
+    PS1="\n┌─[ \e[32m\e[1m\u\e[0m\e[0m ]──[ \e[1m\e[94m\w\e[0m\e[0m ]\$(current_git_branch)\n└──▶ \e[1m$\e[0m "
 else
     PS1="${debian_chroot:+($debian_chroot)}\w\ \$(current_git_branch)"
 fi
