@@ -2,7 +2,7 @@
 import os
 
 HOME = os.path.expanduser('~')
-REPO = os.path.dirname(os.path.join(os.getcwd(), __file__))
+DOTFILES = os.path.dirname(os.path.join(os.getcwd(), __file__))
 FILES = [
     '.bashrc',
     '.vimrc',
@@ -11,6 +11,10 @@ FILES = [
     '.gitconfig',
     '.vim',
     '.config/terminator/config',
+    '.virtualenvs/postactivate',
+    '.virtualenvs/postdeactivate',
+    '.virtualenvs/postmkvirtualenv',
+    '.virtualenvs/predeactivate',
 ]
 
 
@@ -47,7 +51,7 @@ def create_symlink(file):
         else:
             os.remove(os.path.join(HOME, file))
 
-    os.symlink(os.path.join(REPO, file), os.path.join(HOME, file))
+    os.symlink(os.path.join(DOTFILES, file), os.path.join(HOME, file))
 
 
 def main():
