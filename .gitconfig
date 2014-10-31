@@ -1,25 +1,25 @@
 [user]
-	name = Dan Sackett
-	email = danesackett@gmail.com
+    name = Dan Sackett
+    email = danesackett@gmail.com
     IdentityFile = ~/.ssh/id_rsa
 [core]
     filemode = false
 [credential]
-	helper = cache -- timeout=3600
+    helper = cache -- timeout=3600
 [color]
-	ui = auto
+    ui = auto
 [merge]
-	tool = meld
+    tool = meld
 [mergetool]
-	keepBackup = false
+    keepBackup = false
 [alias]
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	co = checkout
-	ci = commit
-	aa = add --all
-	st = status
-	di = diff
-	dc = diff --cached
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    co = checkout
+    ci = commit
+    aa = add --all
+    st = status
+    di = diff
+    dc = diff --cached
 [core]
-	excludesfile = ~/.gitignore
-	filemode = false
+    excludesfile = ~/.gitignore
+    filemode = false
