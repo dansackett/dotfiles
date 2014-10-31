@@ -16,11 +16,6 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# Set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-    xterm-color) color_prompt=yes;;
-esac
-
 # Check for colored support
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
     color_prompt=yes
@@ -35,21 +30,20 @@ function current_git_branch {
 
     # If changes, red branch. If not, green branch
     if [ "$changes" ]; then
+        # Red
         branch_name=$(echo -e "──[ \e[1m\e[31m\1\e[0m\e[0m ]")
     else
+        # Green
         branch_name=$(echo -e "──[ \e[1m\e[32m\1\e[0m\e[0m ]")
     fi
 
-    # Find current git branch
-    current_branch='/^[^*]/d'
-
     # Final branch output
-    git branch --no-color 2> /dev/null | sed -e $current_branch -e "s/* \(.*\)/$branch_name/"
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/$branch_name/"
 }
 
 # Use colored prompt
 if [ "$color_prompt" = yes ]; then
-    PS1="\n┌─[ \e[32m\e[1m\u\e[0m\e[0m ]──[ \e[1m@\e[0m ]──[ \e[1m\e[94m\w\e[0m\e[0m ]\$(current_git_branch)\n└─[ \e[1m$\e[0m "
+    PS1="\n┌─[ \e[32m\e[1m\u\e[0m\e[0m ]──[ \e[1m\e[94m\w\e[0m\e[0m ]\$(current_git_branch)\n└─[ \e[1m$\e[0m "
 else
     PS1="${debian_chroot:+($debian_chroot)}\w\ \$(current_git_branch)"
 fi
@@ -65,12 +59,7 @@ fi
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias gvim='UBUNTU_MENUPROXY= gvim'
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-	colorflag="--color"
-else # OS X `ls`
-	colorflag="-G"
-fi
+colorflag="--color"
 
 ################################################
 #################### PYTHON ####################
