@@ -44,9 +44,6 @@ nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 " General VIM
 """"""""""""""""""""""""""""""""""""""""
 
-" ctags
-set tags=~/.vimtags
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
