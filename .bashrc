@@ -118,3 +118,6 @@ alias vim=gvim
 
 # Make gvim act properly with menu nonsense
 alias gvim="UBUNTU_MENUPROXY= gvim"
+
+################### Path #######################
+export PATH=$PATH:/usr/local/go/bin

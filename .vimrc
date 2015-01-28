@@ -30,12 +30,12 @@ Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
 Bundle "junegunn/limelight.vim"
 Bundle "craigemery/vim-autotag"
+Bundle "fatih/vim-go"
 
 " custom file ignores
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|doctree)$',
-  \ 'file': '\v\.(exe|so|dll|pyc)$',
-  \ }
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
 " LESS Syntax
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
