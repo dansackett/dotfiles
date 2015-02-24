@@ -112,6 +112,9 @@ alias sudo="sudo "
 # Alias vim to gvim
 alias vim=gvim
 
+# Serve current working directory
+alias serve="python -m SimpleHTTPServer"
+
 #################### Various ####################
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
