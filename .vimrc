@@ -212,10 +212,14 @@ syntax on
 "tell the term has 256 colors
 set t_Co=256
 
-colorscheme solarflare
+set background=dark
+colorscheme jellybeans
+
 set guitablabel=%M%t
-set lines=40
-set columns=115
+if has("gui_running")
+    set lines=40
+    set columns=115
+endif
 set guifont=Inconsolata\ Medium\ 10
 
 " invisible character colors
@@ -228,7 +232,6 @@ highlight Cursor guibg=#444
 " highlight col 80
 set colorcolumn=80
 highlight ColorColumn guibg=#333
-highlight ColorColumn ctermbg=Black
 
 " extra whitespace sucks, make it RED
 highlight ExtraWhitespace ctermbg=red guibg=red

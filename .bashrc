@@ -117,7 +117,7 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias sudo="sudo "
 
 # Alias vim to gvim
-alias vim=gvim
+# alias vim=gvim
 
 # Serve current working directory
 alias serve="python -m SimpleHTTPServer"
