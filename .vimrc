@@ -18,17 +18,14 @@ Bundle 'gmarik/vundle'
 Bundle "vim-scripts/bufkill.vim"
 Bundle "kien/ctrlp.vim"
 Bundle "tpope/vim-commentary"
-Bundle "groenewege/vim-less"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
-Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
 Bundle "kchmck/vim-coffee-script"
 Bundle "cakebaker/scss-syntax.vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
-Bundle "junegunn/limelight.vim"
 Bundle "craigemery/vim-autotag"
 Bundle "fatih/vim-go"
 
@@ -128,7 +125,29 @@ if has("autocmd")
  augroup END
 endif
 
-" :autocmd BufNewFile * :Limelight
+" No arrow keys!
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
+
+" Relative numbers by default
+set relativenumber
+
+" Toggle relative line numbers
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <leader>n :call NumberToggle()<cr>
+
+" Automatically set absolute numbers in insert mode
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 """"""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -190,7 +209,7 @@ set smartcase
 set hlsearch
 
 """"""""""""""""""""""""""""""""""""""""
-" Aestehtics
+" Aesthetics
 """"""""""""""""""""""""""""""""""""""""
 
 " keep cursor somewhat centered
