@@ -21,6 +21,13 @@ else
     color_prompt=
 fi
 
+# Check 256 color scheme correctly
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi
+
 # Add current git branch to terminal
 function current_git_branch {
     # Find current Git changes
