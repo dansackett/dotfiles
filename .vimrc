@@ -28,6 +28,8 @@ Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
 Bundle "craigemery/vim-autotag"
 Bundle "fatih/vim-go"
+Bundle "pangloss/vim-javascript"
+Bundle "bling/vim-airline"
 
 " custom file ignores
 let g:ctrlp_custom_ignore = {
@@ -36,6 +38,9 @@ let g:ctrlp_custom_ignore = {
 
 " LESS Syntax
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
+" Airline show
+set laststatus=2
 
 """"""""""""""""""""""""""""""""""""""""
 " General VIM
