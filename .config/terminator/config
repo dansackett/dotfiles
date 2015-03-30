@@ -14,18 +14,11 @@
   go_left = <Ctrl>h
 [profiles]
   [[default]]
-    background_darkness = 0.86
+    background_darkness = 0.81
     scrollback_lines = 10000
     background_type = transparent
     scrollbar_position = hidden
 [layouts]
-  [[old_default]]
-    [[[child1]]]
-      type = Terminal
-      parent = window0
-    [[[window0]]]
-      type = Window
-      parent = ""
   [[default]]
     [[[child0]]]
       position = 0:24
