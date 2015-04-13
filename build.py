@@ -15,6 +15,7 @@ FILES = [
     '.virtualenvs/postdeactivate',
     '.virtualenvs/postmkvirtualenv',
     '.virtualenvs/predeactivate',
+    '.virtualenvs/prermvirtualenv',
 ]
 
 
