@@ -14,10 +14,12 @@
   go_left = <Ctrl>h
 [profiles]
   [[default]]
+    scrollbar_position = hidden
     background_darkness = 0.81
     scrollback_lines = 10000
     background_type = transparent
-    scrollbar_position = hidden
+    use_system_font = False
+    font = Monospace 9
 [layouts]
   [[default]]
     [[[child0]]]
