@@ -27,12 +27,12 @@
       parent = ""
       size = 1366, 744
     [[[child1]]]
-      position = 516
-      type = VPaned
+      position = 443
+      type = HPaned
       order = 0
       parent = child0
     [[[child3]]]
-      position = 683
+      position = 462
       type = HPaned
       order = 1
       parent = child1
