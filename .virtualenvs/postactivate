@@ -10,9 +10,10 @@ if [ -s $_PROJECT_FILE ]; then
     [ -f $_HOOK ] && . $_HOOK
 fi
 
-CURRENT_VENV="\[\e[1m\]Working on\[\e[0m\] \[\e[1m\]\[\e[93m\]`basename \"$VIRTUAL_ENV\"`\[\e[0m\]\[\e[0m\]"
-CURRENT_USER="\[\e[32m\]\[\e[1m\]\u\[\e[0m\]\[\e[0m\] at \[\e[32m\]\[\e[1m\]\h\[\e[0m\]\[\e[0m\]"
-CURRENT_DIR="\[\e[1m\]\[\e[94m\]\w\[\e[0m\]\[\e[0m\]"
-LINE_OPENER="\[\e[1m\]$\[\e[0m\]"
+# Load what we need to build PS1
+source ~/.bash_vars
+source ~/.bash_functions
 
-PS1="\n$CURRENT_VENV \n$CURRENT_USER in $CURRENT_DIR \$(current_git_branch)\n$LINE_OPENER "
+CurrentVenv="Working on \[\e[1m\]\[\e[93m\]`basename \"$VIRTUAL_ENV\"`\[\e[0m\]\[\e[0m\]"
+
+PS1="$NewLine$BIWhite$User$ColorOff at $BIWhite$Host$ColorOff in $BIBlue$PathShort$ColorOff $NewLine$CurrentVenv \$(current_git_branch)$NewLine$BIWhite$LineOpener$ColorOff "

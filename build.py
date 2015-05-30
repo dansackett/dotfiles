@@ -5,6 +5,10 @@ HOME = os.path.expanduser('~')
 DOTFILES = os.path.dirname(os.path.join(os.getcwd(), __file__))
 FILES = [
     '.bashrc',
+    '.bash_functions',
+    '.bash_aliases',
+    '.bash_vars',
+    '.bash_python',
     '.vimrc',
     '.pythonrc.py',
     '.gtkrc-2.0',
