@@ -85,3 +85,7 @@ Jobs="\j"
 User="\u"
 Host="\h"
 LineOpener="$"
+
+# Symbols
+StarSymbol="★"
+MusicSymbol="♫"
