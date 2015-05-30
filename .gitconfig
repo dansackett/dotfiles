@@ -5,7 +5,12 @@
 [credential]
     helper = cache -- timeout=3600
 [color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
     ui = auto
+    pager = true
 [merge]
     tool = meld
 [mergetool]
