@@ -27,7 +27,7 @@ else
 fi
 
 # Set PS1
-PS1="$NewLine$BIWhite$User$ColorOff at $BIWhite$Host$ColorOff in $BIBlue$PathShort$ColorOff \$(current_git_branch)$NewLine$BIWhite$LineOpener$ColorOff "
+PS1="$NewLine$BIWhite$User$ColorOff on $BIWhite$Host$ColorOff in $BIBlue$PathShort$ColorOff \$(current_git_branch)$NewLine$BIWhite$LineOpener$ColorOff "
 
 # Enable programmable completion features
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
