@@ -17,3 +17,8 @@ function current_git_branch {
     # Final branch output
     git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/$branch_name/"
 }
+
+# Check that a command exists
+command_exists () {
+    type "$1" &> /dev/null ;
+}

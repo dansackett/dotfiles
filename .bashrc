@@ -34,9 +34,19 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-#################### Various ####################
 # Make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-################### Path #######################
 export PATH=$PATH:/usr/local/go/bin
+
+if command_exists figlet ; then
+    figlet Hello Dan -f smslant;
+else
+    echo "Figlet not installed...";
+fi
+
+if command_exists fortune ; then
+    fortune;
+else
+    echo "Fortune not installed...";
+fi
