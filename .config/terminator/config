@@ -7,10 +7,12 @@
 [keybindings]
   go_up = <Ctrl>k
   split_horiz = <Ctrl><Alt>minus
+  broadcast_all = <Ctrl>g
   go_down = <Ctrl>j
   close_term = <Ctrl><Alt>w
   split_vert = <Ctrl><Alt>semicolon
   go_right = <Ctrl>l
+  broadcast_off = <Ctrl>Escape
   go_left = <Ctrl>h
 [profiles]
   [[default]]
