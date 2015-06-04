@@ -9,7 +9,6 @@ FILES = [
     '.bash_aliases',
     '.bash_vars',
     '.bash_python',
-    '.bash_mysql',
     '.vimrc',
     '.pythonrc.py',
     '.gtkrc-2.0',
@@ -21,6 +20,7 @@ FILES = [
     '.virtualenvs/postmkvirtualenv',
     '.virtualenvs/predeactivate',
     '.virtualenvs/prermvirtualenv',
+    'tunnel.sh',
 ]
 
 
