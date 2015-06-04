@@ -10,6 +10,7 @@ source ~/.bash_vars
 source ~/.bash_aliases
 source ~/.bash_functions
 source ~/.bash_python
+source ~/.bash_mysql
 
 # History Details
 HISTCONTROL=ignoreboth
