@@ -7,7 +7,7 @@
 [keybindings]
   go_up = <Ctrl>k
   split_horiz = <Ctrl><Alt>minus
-  broadcast_all = <Ctrl>g
+  broadcast_all = <Ctrl>space
   go_down = <Ctrl>j
   close_term = <Ctrl><Alt>w
   split_vert = <Ctrl><Alt>semicolon
