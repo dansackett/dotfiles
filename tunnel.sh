@@ -59,8 +59,8 @@ _do_ssh () {
 _do_mysql () {
     SSH_CONFIG=$1
     USERNAME=$2
-    PASSWORD=$3
-    DATABASE=$4
+    DATABASE=$3
+    PASSWORD=$4
 
     if [ -z $PASSWORD ]
     then
@@ -124,7 +124,7 @@ tunnel () {
             kill_tunnel
 
             _do_ssh $SSH_CONFIG
-            _do_mysql $SSH_CONFIG $USERNAME $PASSWORD $DATABASE
+            _do_mysql $SSH_CONFIG $USERNAME $DATABASE $PASSWORD
         else
             _show_available_configs
             exit 1
