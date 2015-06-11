@@ -59,8 +59,8 @@ _do_ssh () {
 _do_mysql () {
     SSH_CONFIG=$1
     USERNAME=$2
-    DATABASE=$3
-    PASSWORD=$4
+    PASSWORD=$3
+    DATABASE=$4
 
     if [ -z $PASSWORD ]
     then
