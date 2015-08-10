@@ -50,3 +50,6 @@ if command_exists fortune ; then
 else
     echo "Fortune not installed...";
 fi
+
+# Add Golang path
+PATH="$HOME/go/bin:$PATH"
