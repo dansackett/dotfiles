@@ -166,8 +166,6 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <leader>n :call NumberToggle()<cr>
-
 " Automatically set absolute numbers in insert mode
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
@@ -178,6 +176,9 @@ autocmd InsertLeave * :set relativenumber
 
 " set leader
 let mapleader = ","
+
+" Easily switch between line number styles
+nnoremap <leader>n :call NumberToggle()<cr>
 
 " switch between files with <leader><leader>
 nnoremap <leader><leader> <c-^>
