@@ -26,7 +26,6 @@ Bundle "kchmck/vim-coffee-script"
 Bundle "cakebaker/scss-syntax.vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
-Bundle "craigemery/vim-autotag"
 Bundle "fatih/vim-go"
 Bundle "pangloss/vim-javascript"
 Bundle "bling/vim-airline"
@@ -36,6 +35,7 @@ Bundle "godlygeek/tabular"
 Bundle "plasticboy/vim-markdown"
 Bundle "editorconfig/editorconfig-vim"
 Bundle "vim-scripts/gitignore"
+Bundle "saltstack/salt-vim"
 
 " custom file ignores
 let g:ctrlp_custom_ignore = {

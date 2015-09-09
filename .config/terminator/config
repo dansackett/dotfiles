@@ -31,13 +31,13 @@
       parent = ""
       size = 1366, 744
     [[[child1]]]
-      position = 443
+      position = 683
       type = HPaned
       order = 0
       parent = child0
-    [[[child3]]]
-      position = 462
-      type = HPaned
+    [[[terminal3]]]
+      profile = default
+      type = Terminal
       order = 1
       parent = child1
     [[[terminal2]]]
@@ -45,14 +45,4 @@
       type = Terminal
       order = 0
       parent = child1
-    [[[terminal5]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child3
-    [[[terminal4]]]
-      profile = default
-      type = Terminal
-      order = 0
-      parent = child3
 [plugins]
