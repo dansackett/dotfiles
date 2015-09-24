@@ -53,3 +53,4 @@ fi
 
 # Add Golang path
 PATH="$HOME/go/bin:$PATH"
+GOPATH="$HOME/godeps/"
