@@ -60,6 +60,9 @@ nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 " Airline show
 set laststatus=2
 
+" GoImport on save as well as formatting
+autocmd BufWritePre *.go call go#fmt#Format(1)
+
 """"""""""""""""""""""""""""""""""""""""
 " General VIM
 """"""""""""""""""""""""""""""""""""""""
