@@ -216,6 +216,9 @@ nnoremap <leader>i :BundleInstall
 " /// for vim-commentary
 nmap /// <Plug>CommentaryLine
 
+" shortcut to save files that are in READONLY mode easily
+cmap w!! w !sudo tee % >/dev/null
+
 """"""""""""""""""""""""""""""""""""""""
 " Searching
 """"""""""""""""""""""""""""""""""""""""
