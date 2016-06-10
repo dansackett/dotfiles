@@ -71,3 +71,6 @@ alias secret_key='python -c "import random; print \"\".join([random.SystemRandom
 # Scripts
 alias tunnel='bash ~/tunnel.sh'
 alias kill_tunnel='bash ~/tunnel.sh --kill'
+
+# Golang
+alias golint='$GOPATH/bin/golint '

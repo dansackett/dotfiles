@@ -36,6 +36,9 @@ Bundle "plasticboy/vim-markdown"
 Bundle "editorconfig/editorconfig-vim"
 Bundle "vim-scripts/gitignore"
 Bundle "saltstack/salt-vim"
+Bundle "vim-scripts/indentpython.vim"
+Bundle "nvie/vim-flake8"
+Bundle "scrooloose/syntastic"
 
 " custom file ignores
 let g:ctrlp_custom_ignore = {
@@ -106,12 +109,22 @@ set tm=500
 " allow background buffers
 set hidden
 
-" global tab settings
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set smarttab
+" python tab settings
+au BufNewFile,BufRead *.py;
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set smarttab |
+    \ set autoindent |
+    \ set fileformat=unix |
+
+" JS, HTML, and CSS tab settings
+au BufNewFile,BufRead *.js, *.html, *.css;
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
 
 " ignore these nonsense files
 set wildignore=*.swp,*.bak,*.pyc,*.class
