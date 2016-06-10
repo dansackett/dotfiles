@@ -36,7 +36,6 @@ Bundle "plasticboy/vim-markdown"
 Bundle "editorconfig/editorconfig-vim"
 Bundle "vim-scripts/gitignore"
 Bundle "saltstack/salt-vim"
-Bundle "vim-scripts/indentpython.vim"
 Bundle "nvie/vim-flake8"
 Bundle "scrooloose/syntastic"
 
@@ -117,7 +116,6 @@ au BufNewFile,BufRead *.py;
     \ set textwidth=79 |
     \ set expandtab |
     \ set smarttab |
-    \ set autoindent |
     \ set fileformat=unix |
 
 " JS, HTML, and CSS tab settings
