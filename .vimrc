@@ -84,13 +84,11 @@ set nowrap
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" global text columns
-set textwidth=78
-
 " don't automatically break long lines unless they are new
 set formatoptions+=l
 
 " detect file type, turn on that type's plugins and indent preferences
+filetype plugin on
 filetype plugin indent on
 
 " Show matching brackets when text indicator is over them
@@ -108,21 +106,14 @@ set tm=500
 " allow background buffers
 set hidden
 
-" python tab settings
-au BufNewFile,BufRead *.py;
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set smarttab |
-    \ set fileformat=unix |
-
-" JS, HTML, and CSS tab settings
-au BufNewFile,BufRead *.js, *.html, *.css;
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
+" global tab settings
+set expandtab
+set smarttab
+set textwidth=79
+set fileformat=unix
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " ignore these nonsense files
 set wildignore=*.swp,*.bak,*.pyc,*.class
