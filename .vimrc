@@ -14,28 +14,34 @@ call vundle#rc()
 " vundle repo
 Bundle 'gmarik/vundle'
 
-" github repos
+" productivity
+Bundle "ervandew/supertab"
+Bundle "Valloric/YouCompleteMe"
+Bundle "SirVer/ultisnips"
+Bundle "honza/vim-snippets"
 Bundle "vim-scripts/bufkill.vim"
 Bundle "kien/ctrlp.vim"
 Bundle "tpope/vim-commentary"
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
-Bundle "kchmck/vim-coffee-script"
-Bundle "cakebaker/scss-syntax.vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "tpope/vim-surround"
-Bundle "fatih/vim-go"
-Bundle "pangloss/vim-javascript"
 Bundle "bling/vim-airline"
-Bundle "othree/html5.vim"
-Bundle "hail2u/vim-css3-syntax"
-Bundle "godlygeek/tabular"
-Bundle "plasticboy/vim-markdown"
+
+" misc
 Bundle "editorconfig/editorconfig-vim"
 Bundle "vim-scripts/gitignore"
+
+" language specific
+Bundle "othree/html5.vim"
+Bundle "cakebaker/scss-syntax.vim"
+Bundle "fatih/vim-go"
+Bundle "pangloss/vim-javascript"
+Bundle "hail2u/vim-css3-syntax"
+Bundle "plasticboy/vim-markdown"
 Bundle "saltstack/salt-vim"
+
+" error handling
 Bundle "nvie/vim-flake8"
 Bundle "scrooloose/syntastic"
 
@@ -64,6 +70,16 @@ set laststatus=2
 
 " GoImport on save as well as formatting
 autocmd BufWritePre *.go call go#fmt#Format(1)
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 """"""""""""""""""""""""""""""""""""""""
 " General VIM
