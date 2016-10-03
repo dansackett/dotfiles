@@ -11,6 +11,9 @@ source ~/.bash_aliases
 source ~/.bash_functions
 source ~/.bash_python
 
+ # Load local items for things not in VC
+[[ -f "$HOME/.bash_local" ]] && source "$HOME/.bash_local"
+
 # History Details
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
@@ -38,19 +41,20 @@ fi
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 export PATH=$PATH:/usr/local/go/bin
-
-if command_exists figlet ; then
-    figlet Hello Dan -f smslant;
-else
-    echo "Figlet not installed...";
-fi
-
-if command_exists fortune ; then
-    fortune;
-else
-    echo "Fortune not installed...";
-fi
+export PATH=$PATH:~/.config/composer/vendor/bin
 
 # Add Golang path
-PATH="$HOME/go/bin:$PATH"
 export GOPATH="$HOME/godeps/"
+
+# Setup NVM
+export NVM_DIR="/home/dan/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Setup RVM
+export PATH="$PATH:$HOME/.rvm/bin"
+
+if command_exists $GOPATH/bin/gophersay ; then
+    $GOPATH/bin/gophersay;
+else
+    echo "Gophersay not installed. Check out https://github.com/adamryman/gophersay for details";
+fi

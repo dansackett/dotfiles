@@ -40,6 +40,8 @@ Bundle "pangloss/vim-javascript"
 Bundle "hail2u/vim-css3-syntax"
 Bundle "plasticboy/vim-markdown"
 Bundle "saltstack/salt-vim"
+Bundle "rust-lang/rust.vim"
+Bundle "jwalton512/vim-blade"
 
 " error handling
 Bundle "nvie/vim-flake8"
@@ -78,8 +80,8 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 """"""""""""""""""""""""""""""""""""""""
 " General VIM
