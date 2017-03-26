@@ -74,3 +74,6 @@ alias kill_tunnel='bash ~/tunnel.sh --kill'
 
 # Golang
 alias golint='$GOPATH/bin/golint '
+
+# Python
+alias rmpyc='find . -name "*.pyc" -exec rm -rf {} \;'

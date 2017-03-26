@@ -1,51 +1,53 @@
 [global_config]
-  window_state = maximise
-  title_hide_sizetext = True
-  title_inactive_fg_color = "#e1e1e1"
   suppress_multiple_term_dialog = True
-  title_transmit_bg_color = "#007bc8"
+  title_hide_sizetext = True
   title_inactive_bg_color = "#000000"
+  title_inactive_fg_color = "#e1e1e1"
+  title_transmit_bg_color = "#007bc8"
+  window_state = maximise
 [keybindings]
-  toggle_zoom = <Ctrl><Shift>x
+  broadcast_all = F1
+  broadcast_off = F2
+  close_term = <Ctrl><Alt>w
+  go_down = <Ctrl>j
+  go_left = <Ctrl>h
+  go_right = <Ctrl>l
   go_up = <Ctrl>k
   split_horiz = <Ctrl><Alt>minus
-  broadcast_all = F1
-  go_down = <Ctrl>j
-  close_term = <Ctrl><Alt>w
   split_vert = <Ctrl><Alt>semicolon
-  go_right = <Ctrl>l
-  broadcast_off = F2
-  go_left = <Ctrl>h
-[profiles]
-  [[default]]
-    scrollbar_position = hidden
-    use_system_font = False
-    background_darkness = 0.81
-    scrollback_lines = 10000
-    background_type = transparent
-    background_image = None
-    font = Monospace 9
+  toggle_zoom = <Ctrl><Shift>x
 [layouts]
   [[default]]
     [[[child0]]]
-      position = 0:24
-      type = Window
       order = 0
       parent = ""
+      position = 0:24
       size = 1366, 744
+      type = Window
     [[[child1]]]
-      position = 683
-      type = HPaned
       order = 0
       parent = child0
-    [[[terminal3]]]
-      profile = default
-      type = Terminal
-      order = 1
-      parent = child1
+      position = 683
+      type = HPaned
     [[[terminal2]]]
-      profile = default
-      type = Terminal
       order = 0
       parent = child1
+      profile = default
+      type = Terminal
+    [[[terminal3]]]
+      order = 1
+      parent = child1
+      profile = default
+      type = Terminal
 [plugins]
+[profiles]
+  [[default]]
+    background_darkness = 0.81
+    background_image = None
+    background_type = transparent
+    custom_command = TERM=xterm-256color bash -l
+    font = Monospace 9
+    scrollback_lines = 10000
+    scrollbar_position = hidden
+    use_custom_command = True
+    use_system_font = False

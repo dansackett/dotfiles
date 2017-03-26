@@ -23,7 +23,7 @@ HISTFILESIZE=2000
 shopt -s histappend
 
 # Check 256 color scheme correctly
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+if [ -e /lib/terminfo/x/xterm-256color ]; then
     export TERM='xterm-256color'
 else
     export TERM='xterm-color'
@@ -52,9 +52,12 @@ export NVM_DIR="/home/dan/.nvm"
 
 # Setup RVM
 export PATH="$PATH:$HOME/.rvm/bin"
+source ~/.rvm/scripts/rvm
 
 if command_exists $GOPATH/bin/gophersay ; then
     $GOPATH/bin/gophersay;
 else
     echo "Gophersay not installed. Check out https://github.com/adamryman/gophersay for details";
 fi
+
+eval "$(direnv hook bash)"

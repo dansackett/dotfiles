@@ -43,9 +43,14 @@ Bundle "saltstack/salt-vim"
 Bundle "rust-lang/rust.vim"
 Bundle "jwalton512/vim-blade"
 
-" error handling
-Bundle "nvie/vim-flake8"
-Bundle "scrooloose/syntastic"
+" Enable project specifc .vimrc files
+Bundle 'LucHermitte/lh-vim-lib'
+Bundle 'LucHermitte/local_vimrc'
+
+" python pylinter
+" set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
+" set errorformat=%f:%l:\ %m
+" autocmd BufWritePost *.py make
 
 " custom file ignores
 let g:ctrlp_custom_ignore = {
@@ -127,7 +132,6 @@ set hidden
 " global tab settings
 set expandtab
 set smarttab
-set textwidth=79
 set fileformat=unix
 set tabstop=4
 set softtabstop=4
@@ -303,6 +307,9 @@ set colorcolumn=80
 highlight ColorColumn guibg=#333
 
 " extra whitespace sucks, make it RED
-highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+" highlight ExtraWhitespace ctermbg=red guibg=red
+" autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+" match ExtraWhitespace /\s\+$/
+
+" Force unsafe commands not to run
+set secure
