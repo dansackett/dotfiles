@@ -13,16 +13,41 @@
     pager = true
 [merge]
     tool = meld
+
+    conflictstyle = diff3
+    # Standard diff is two sets of final changes. This introduces the original text before each side's changes.
 [mergetool]
     keepBackup = false
+[push]
+  default = simple
+  # "push the current branch back to the branch whose changes are usually integrated into the current branch"
+  # "refuse to push if the upstream branch’s name is different from the local one"
+
+  followTags = true
+[status]
+  showUntrackedFiles = all
+  # Sometimes a newly-added folder, since it's only one line in git status, can slip under the radar.
 [alias]
+    prune = fetch --prune
+    # clean branches locally that do not exist in remote
+
     lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-    co = checkout
-    ci = commit
+    # oh so prettu
+
     aa = add --all
+    # this is hardwired for me
+
+    undo = reset --soft HEAD^
+    # when I make a mistake committing and want to reset it
+
+    stash-all = stash save --include-untracked
+    # stash unadded files as well!
+
     st = status
-    di = diff
+    # simple and effective
+
     dc = diff --cached
+    # when you want to see the cached diff...
 [core]
 	excludesfile = ~/projects/.gitignore
     filemode = false
