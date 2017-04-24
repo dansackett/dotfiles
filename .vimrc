@@ -12,40 +12,40 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " vundle repo
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " productivity
-Bundle "ervandew/supertab"
-Bundle "Valloric/YouCompleteMe"
-Bundle "SirVer/ultisnips"
-Bundle "honza/vim-snippets"
-Bundle "vim-scripts/bufkill.vim"
-Bundle "kien/ctrlp.vim"
-Bundle "tpope/vim-commentary"
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "terryma/vim-multiple-cursors"
-Bundle "tpope/vim-surround"
-Bundle "bling/vim-airline"
+Plugin "ervandew/supertab"
+Plugin "Valloric/YouCompleteMe"
+Plugin "SirVer/ultisnips"
+Plugin "honza/vim-snippets"
+Plugin "vim-scripts/bufkill.vim"
+Plugin "kien/ctrlp.vim"
+Plugin "tpope/vim-commentary"
+Plugin "MarcWeber/vim-addon-mw-utils"
+Plugin "tomtom/tlib_vim"
+Plugin "terryma/vim-multiple-cursors"
+Plugin "tpope/vim-surround"
+Plugin "bling/vim-airline"
 
 " misc
-Bundle "editorconfig/editorconfig-vim"
-Bundle "vim-scripts/gitignore"
+Plugin "editorconfig/editorconfig-vim"
+Plugin "vim-scripts/gitignore"
 
 " language specific
-Bundle "othree/html5.vim"
-Bundle "cakebaker/scss-syntax.vim"
-Bundle "fatih/vim-go"
-Bundle "pangloss/vim-javascript"
-Bundle "hail2u/vim-css3-syntax"
-Bundle "plasticboy/vim-markdown"
-Bundle "saltstack/salt-vim"
-Bundle "rust-lang/rust.vim"
-Bundle "jwalton512/vim-blade"
+Plugin "othree/html5.vim"
+Plugin "cakebaker/scss-syntax.vim"
+Plugin "fatih/vim-go"
+Plugin "pangloss/vim-javascript"
+Plugin "hail2u/vim-css3-syntax"
+Plugin "plasticboy/vim-markdown"
+Plugin "saltstack/salt-vim"
+Plugin "rust-lang/rust.vim"
+Plugin "jwalton512/vim-blade"
 
 " Enable project specifc .vimrc files
-Bundle 'LucHermitte/lh-vim-lib'
-Bundle 'LucHermitte/local_vimrc'
+Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'LucHermitte/local_vimrc'
 
 " python pylinter
 " set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
