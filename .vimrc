@@ -8,44 +8,47 @@ filetype off
 """"""""""""""""""""""""""""""""""""""""
 
 " vundle stuff
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " vundle repo
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 " productivity
-Plugin "ervandew/supertab"
-Plugin "Valloric/YouCompleteMe"
-Plugin "SirVer/ultisnips"
-Plugin "honza/vim-snippets"
-Plugin "vim-scripts/bufkill.vim"
-Plugin "kien/ctrlp.vim"
-Plugin "tpope/vim-commentary"
-Plugin "MarcWeber/vim-addon-mw-utils"
-Plugin "tomtom/tlib_vim"
-Plugin "terryma/vim-multiple-cursors"
-Plugin "tpope/vim-surround"
-Plugin "bling/vim-airline"
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'vim-scripts/bufkill.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
 
 " misc
-Plugin "editorconfig/editorconfig-vim"
-Plugin "vim-scripts/gitignore"
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'vim-scripts/gitignore'
 
 " language specific
-Plugin "othree/html5.vim"
-Plugin "cakebaker/scss-syntax.vim"
-Plugin "fatih/vim-go"
-Plugin "pangloss/vim-javascript"
-Plugin "hail2u/vim-css3-syntax"
-Plugin "plasticboy/vim-markdown"
-Plugin "saltstack/salt-vim"
-Plugin "rust-lang/rust.vim"
-Plugin "jwalton512/vim-blade"
+Plugin 'othree/html5.vim'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'fatih/vim-go'
+Plugin 'pangloss/vim-javascript'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'saltstack/salt-vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'jwalton512/vim-blade'
 
 " Enable project specifc .vimrc files
 Plugin 'LucHermitte/lh-vim-lib'
 Plugin 'LucHermitte/local_vimrc'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " python pylinter
 " set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
