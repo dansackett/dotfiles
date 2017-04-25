@@ -41,14 +41,9 @@ fi
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:~/.config/composer/vendor/bin
 
 # Add Golang path
 export GOPATH="$HOME/godeps/"
-
-# Setup NVM
-export NVM_DIR="/home/dan/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # Setup RVM
 export PATH="$PATH:$HOME/.rvm/bin"
