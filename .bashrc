@@ -52,7 +52,7 @@ source ~/.rvm/scripts/rvm
 if command_exists $GOPATH/bin/gophersay ; then
     $GOPATH/bin/gophersay;
 else
-    echo "Gophersay not installed. Check out https://github.com/adamryman/gophersay for details";
+    echo "Gophersay not installed. Check out https://github.com/dansackett/gophersay for details";
 fi
 
 eval "$(direnv hook bash)"
