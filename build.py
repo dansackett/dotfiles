@@ -1,8 +1,8 @@
 #!/usr/bin/env python
+from __future__ import print_function
+
 import os
 
-HOME = os.path.expanduser('~')
-DOTFILES = os.path.dirname(os.path.join(os.getcwd(), __file__))
 FILES = [
     '.bashrc',
     '.bash_functions',
@@ -23,48 +23,30 @@ FILES = [
     'tunnel.sh',
 ]
 
-
-def make_directories(file):
-    """If we have directories, create them recursively ignoring the file name"""
-    if '/' in file:
-        directories = '/'.join(file.split('/')[:-1])
-
-        try:
-            os.makedirs(os.path.join(HOME, directories))
-        except:
-            pass
-
-
-def file_exists(file):
-    """Check if the file exists on the HOME path"""
-    if os.path.exists(os.path.join(HOME, file)):
-        return '{0} already exists. Would you like to overwrite it? (y, n): '
-
-    return
-
-
-def create_symlink(file):
-    """Build Symlink"""
-    exists = file_exists(file)
-
-    make_directories(file)
-
-    if exists:
-        choice = raw_input(exists.format(file))
-
-        if not choice.lower() is 'y':
-            return
-        else:
-            os.remove(os.path.join(HOME, file))
-
-    os.symlink(os.path.join(DOTFILES, file), os.path.join(HOME, file))
-
-
-def main():
-    """Run our program"""
-    for file in FILES:
-        create_symlink(file)
-
-
 if __name__ == '__main__':
-    main()
+    home_dir = os.path.expanduser('~')
+    dotfiles_dir = os.path.dirname(os.path.join(os.getcwd(), __file__))
+
+    for filename in FILES:
+        print('Creating symlink for %s' % filename)
+
+        home_file_path = os.path.join(home_dir, filename)
+        dotfiles_file_path = os.path.join(dotfiles_dir, filename)
+
+        # Remove any existing symlinks
+        if os.path.exists(home_file_path):
+            os.remove(home_file_path)
+
+        # Attempt to create directories reursively. It throws an exception if
+        # the path already exists
+        if '/' in filename:
+            try:
+                directories = '/'.join(filename.split('/')[:-1])
+                os.makedirs(os.path.join(home_dir, directories))
+            except:
+                pass
+
+        # Symlink that file
+        os.symlink(dotfiles_file_path, home_file_path)
+
+    print('Done!')
