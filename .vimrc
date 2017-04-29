@@ -42,6 +42,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'saltstack/salt-vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'jwalton512/vim-blade'
+Plugin 'mxw/vim-jsx'
 
 " Enable project specifc .vimrc files
 Plugin 'LucHermitte/lh-vim-lib'
@@ -298,16 +299,8 @@ if has("gui_running")
 endif
 set guifont=Inconsolata\ Medium\ 10
 
-" invisible character colors
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
-highlight CursorLine guibg=#333
-highlight LineNr guifg=#444
-highlight Cursor guibg=#444
-
 " highlight col 80
 set colorcolumn=80
-highlight ColorColumn guibg=#333
 
 " extra whitespace sucks, make it RED
 " highlight ExtraWhitespace ctermbg=red guibg=red
