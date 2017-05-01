@@ -43,7 +43,7 @@ fi
 export PATH=$PATH:/usr/local/go/bin
 
 # Add Golang path
-export GOPATH="$HOME/godeps/"
+export GOPATH="/var/lib/golang"
 
 # Setup RVM
 export PATH="$PATH:$HOME/.rvm/bin"
