@@ -29,4 +29,4 @@ should install direnv or remove the declaration in the .bashrc to avoid seeing
 warnings.
 
 I also have a fun Golang gopher who says Ernest Hemmingway quotes. You can get
-it from [https://github,com/dansackett/gophersay](https://github,com/dansackett/gophersay).
+it from [https://github.com/dansackett/gophersay](https://github.com/dansackett/gophersay).
