@@ -51,3 +51,4 @@
 [core]
 	excludesfile = ~/projects/.gitignore
     filemode = false
+    editor = vim
