@@ -14,6 +14,7 @@ FILES = [
     '.gtkrc-2.0',
     '.gitconfig',
     '.vim',
+    '.tmux.conf',
     '.config/terminator/config',
     '.virtualenvs/postactivate',
     '.virtualenvs/postdeactivate',

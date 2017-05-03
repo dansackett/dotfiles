@@ -9,15 +9,30 @@
   broadcast_all = F1
   broadcast_off = F2
   close_term = <Ctrl><Alt>w
-  go_down = <Ctrl>j
-  go_left = <Ctrl>h
-  go_right = <Ctrl>l
-  go_up = <Ctrl>k
+  go_down = <Ctrl><Shift>j
+  go_left = <Ctrl><Shift>h
+  go_right = <Ctrl><Shift>l
+  go_up = <Ctrl><Shift>k
   split_horiz = <Ctrl><Alt>minus
   split_vert = <Ctrl><Alt>semicolon
   toggle_zoom = <Ctrl><Shift>x
 [layouts]
   [[default]]
+    [[[child0]]]
+      fullscreen = False
+      maximised = True
+      order = 0
+      parent = ""
+      position = 0:24
+      size = 1920, 1056
+      title = /bin/bash
+      type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = default
+      type = Terminal
+  [[split]]
     [[[child0]]]
       order = 0
       parent = ""

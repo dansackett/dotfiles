@@ -27,6 +27,8 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " misc
 Plugin 'editorconfig/editorconfig-vim'

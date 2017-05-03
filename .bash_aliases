@@ -52,21 +52,27 @@ alias shutoff='sudo shutdown -h now'
 
 # Utils
 alias open_dir='gnome-open .'
-alias home_dir='cd ~'
-alias projects_dir='cd ~/projects'
-alias documents_dir='cd ~/Documents'
-alias downloads_dir='cd ~/Downloads'
-alias pictures_dir='cd ~/Pictures'
-alias music_dir='cd ~/Music'
-alias movies_dir='cd ~/Movies'
-alias desktop_dir='cd ~/Desktop'
+alias home='cd ~'
+alias projects='cd ~/projects'
+alias docs='cd ~/Documents'
+alias downloads='cd ~/Downloads'
+alias pics='cd ~/Pictures'
+alias music='cd ~/Music'
+alias movies='cd ~/Movies'
+alias desktop='cd ~/Desktop'
 alias ssh_dir='cd ~/.ssh'
 alias pub_key='cat ~/.ssh/id_rsa.pub | xclip; echo "public key copied to clipboard"'
 alias hosts='sudo vim /etc/hosts'
 alias vundle='vim +BundleInstall +qall'
 alias lipsum='echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada risus eu magna posuere eu laoreet odio ornare. Proin malesuada gravida magna at lacinia. Donec metus erat, rutrum sit amet faucibus quis, mattis at sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aenean feugiat nibh in quam facilisis a rutrum risus malesuada. Fusce libero libero, scelerisque eget luctus a, blandit vel nisi. Proin elit nisi, adipiscing nec congue et, ornare vel enim. Nam orci dui, volutpat vitae fringilla vitae, scelerisque ut neque. Etiam libero orci, consequat ac porttitor a, feugiat nec orci. Nullam volutpat rhoncus dolor sed pellentesque. Etiam ornare, enim molestie semper imperdiet, urna ligula porta massa, in tempor diam quam ut velit. Ut sit amet nulla sem, pellentesque bibendum elit. Sed lectus libero, iaculis a vestibulum at, laoreet tempor orci. Praesent scelerisque urna et velit eleifend viverra." | xclip; echo "copied to clipboard";'
 alias dotfiles='cd ~/dotfiles'
+alias dotinstall='workon dotfiles && python ./build.py && cd -'
 alias secret_key='python -c "import random; print \"\".join([random.SystemRandom().choice(\"abcdefghijklmnopqrstuvwxyz0123456789\!\@\#\$\%\^\&\*\(\-\_\=\+\)\") for i in range(50)])" | xclip; echo "copied to clipboard";'
+
+# Tmux
+alias t='tmux'
+alias tnew='tmux new-session -s'
+alias tkillall="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 
 # Scripts
 alias tunnel='bash ~/tunnel.sh'

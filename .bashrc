@@ -22,12 +22,11 @@ HISTFILESIZE=2000
 # Append to the history file, don"t overwrite it
 shopt -s histappend
 
-# Check 256 color scheme correctly
-if [ -e /lib/terminfo/x/xterm-256color ]; then
-    export TERM='xterm-256color'
-else
-    export TERM='xterm-color'
-fi
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
+# Set 256 color scheme
+export TERM='screen-256color'
 
 # Set PS1
 PS1="$NewLine$BIWhite$User$ColorOff on $BIWhite$Host$ColorOff in $BIBlue$PathShort$ColorOff \$(current_git_branch)$NewLine$BIWhite$LineOpener$ColorOff "
@@ -46,8 +45,8 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH="/var/lib/golang"
 
 # Setup RVM
-export PATH="$PATH:$HOME/.rvm/bin"
-source ~/.rvm/scripts/rvm
+[[ -s "$HOME/.rvm/bin" ]] && export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 if command_exists $GOPATH/bin/gophersay ; then
     $GOPATH/bin/gophersay;
@@ -55,4 +54,6 @@ else
     echo "Gophersay not installed. Check out https://github.com/dansackett/gophersay for details";
 fi
 
-eval "$(direnv hook bash)"
+if command_exists direnv ; then
+    eval "$(direnv hook bash)"
+fi
