@@ -5,11 +5,9 @@
 # If not running interactively, don"t do anything
 [ -z "$PS1" ] && return
 
-# Include Bash External Files
-source ~/.bash_vars
-source ~/.bash_aliases
-source ~/.bash_functions
-source ~/.bash_python
+# Ensure user-installed binaries take precedence
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/share/python:$PATH
 
  # Load local items for things not in VC
 [[ -f "$HOME/.bash_local" ]] && source "$HOME/.bash_local"
@@ -27,6 +25,12 @@ shopt -s cdspell
 
 # Set 256 color scheme
 export TERM='screen-256color'
+
+# Include Bash External Files
+source ~/.bash_vars
+source ~/.bash_aliases
+source ~/.bash_functions
+source ~/.bash_python
 
 # Set PS1
 PS1="$NewLine$BIWhite$User$ColorOff on $BIWhite$Host$ColorOff in $BIBlue$PathShort$ColorOff \$(current_git_branch)$NewLine$BIWhite$LineOpener$ColorOff "
