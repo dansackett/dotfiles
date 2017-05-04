@@ -8,49 +8,48 @@ filetype off
 """"""""""""""""""""""""""""""""""""""""
 
 " vundle stuff
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " vundle repo
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
 " productivity
-Plugin 'ervandew/supertab'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'vim-scripts/bufkill.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-surround'
-Plugin 'bling/vim-airline'
-Plugin 'tmux-plugins/vim-tmux'
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'vim-scripts/bufkill.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'bling/vim-airline'
+Plug 'tmux-plugins/vim-tmux'
+Plug 'christoomey/vim-tmux-navigator'
 
 " misc
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'vim-scripts/gitignore'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'vim-scripts/gitignore'
 
 " language specific
-Plugin 'othree/html5.vim'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'fatih/vim-go'
-Plugin 'pangloss/vim-javascript'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'saltstack/salt-vim'
-Plugin 'rust-lang/rust.vim'
-Plugin 'jwalton512/vim-blade'
-Plugin 'mxw/vim-jsx'
+Plug 'othree/html5.vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'fatih/vim-go'
+Plug 'pangloss/vim-javascript'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'plasticboy/vim-markdown'
+Plug 'saltstack/salt-vim'
+Plug 'rust-lang/rust.vim'
+Plug 'jwalton512/vim-blade'
+Plug 'mxw/vim-jsx'
 
 " Enable project specifc .vimrc files
-Plugin 'LucHermitte/lh-vim-lib'
-Plugin 'LucHermitte/local_vimrc'
+Plug 'LucHermitte/lh-vim-lib'
+Plug 'LucHermitte/local_vimrc'
 
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 
 " python pylinter
