@@ -14,12 +14,13 @@ python build.py
 
 ## Configuring Vim
 
-My .vimrc uses [Vundle](https://github.com/VundleVim/Vundle.vim) plugins. You
-will need to install Vundle and run the installer to have Vim work as expected:
+My .vimrc uses [vim-plug](https://github.com/junegunn/vim-plug) plugins. You
+will need to install vim-plug and run the installer to have Vim work as expected:
 
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall
 ```
 
 ## Additional Dependencies
@@ -27,6 +28,10 @@ vim +PluginInstall +qall
 I have [direnv](https://direnv.net/) as part of my local workstation. You
 should install direnv or remove the declaration in the .bashrc to avoid seeing
 warnings.
+
+I also have [fzf](https://github.com/junegunn/fzf) and
+[the silver searcher](https://github.com/ggreer/the_silver_searcher) setup to
+make search super fast and more fuzzy in the filesystem.
 
 I also have a fun Golang gopher who says Ernest Hemmingway quotes. You can get
 it from [https://github.com/dansackett/gophersay](https://github.com/dansackett/gophersay).
