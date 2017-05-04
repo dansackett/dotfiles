@@ -1,0 +1,31 @@
+ # Load local items for things not in VC
+[[ -f "$HOME/.bash_local" ]] && source "$HOME/.bash_local"
+
+# Enable programmable completion features
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+# Make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# Setup RVM
+[[ -s "$HOME/.rvm/bin" ]] && export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Setup fzf for fuzzy CLI search
+[[ -f "$HOME/.fzf.bash" ]] && source ~/.fzf.bash
+
+if command_exists fzf ; then
+    export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+fi
+
+if command_exists $GOPATH/bin/gophersay ; then
+    $GOPATH/bin/gophersay;
+else
+    echo "Gophersay not installed. Check out https://github.com/dansackett/gophersay for details";
+fi
+
+if command_exists direnv ; then
+    eval "$(direnv hook bash)"
+fi

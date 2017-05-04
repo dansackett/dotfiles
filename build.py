@@ -10,6 +10,7 @@ FILES = [
     '.bash_vars',
     '.bash_python',
     '.bash_profile',
+    '.bash_conditionals',
     '.vimrc',
     '.pythonrc.py',
     '.gtkrc-2.0',
