@@ -10,6 +10,9 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/go/bin:$PATH
 
+# Add Golang path
+export GOPATH="/var/lib/golang"
+
 # History Details
 HISTCONTROL=ignoreboth
 HISTSIZE=1000
@@ -33,6 +36,3 @@ source ~/.bash_conditionals
 
 # Set PS1
 PS1="$NewLine$BIWhite$User$ColorOff on $BIWhite$Host$ColorOff in $BIBlue$PathShort$ColorOff \$(current_git_branch)$NewLine$BIWhite$LineOpener$ColorOff "
-
-# Add Golang path
-export GOPATH="/var/lib/golang"
