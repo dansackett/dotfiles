@@ -71,6 +71,7 @@ alias secret_key='python -c "import random; print \"\".join([random.SystemRandom
 
 # Tmux
 alias t='tmux'
+alias tls='tmux ls'
 alias tat='tmux attach -t'
 alias tnew='tmux new-session -s'
 alias tkill='tmux kill-session -t'
