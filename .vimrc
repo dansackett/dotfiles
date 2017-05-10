@@ -46,8 +46,7 @@ Plug 'jwalton512/vim-blade'
 Plug 'mxw/vim-jsx'
 
 " Enable project specifc .vimrc files
-Plug 'LucHermitte/lh-vim-lib'
-Plug 'LucHermitte/local_vimrc'
+Plug 'embear/vim-localvimrc'
 
 call plug#end()            " required
 filetype plugin indent on    " required
