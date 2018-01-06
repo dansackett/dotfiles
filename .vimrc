@@ -34,6 +34,7 @@ Plug 'vim-scripts/gitignore'
 Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'fatih/vim-go'
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh' }
 Plug 'pangloss/vim-javascript'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'plasticboy/vim-markdown'
@@ -76,9 +77,6 @@ nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 " Airline show
 set laststatus=2
 
-" GoImport on save as well as formatting
-autocmd BufWritePre *.go call go#fmt#Format(1)
-
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -88,6 +86,30 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+
+" vim-go
+let g:go_fmt_command = "goimports"
+let g:go_autodetect_gopath = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_auto_type_info = 1
+"let g:go_auto_sameids = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_deadline = "5s"
+let g:go_list_type = "quickfix"
+set updatetime=100 " updates :GoInfo faster
+
+let g:ycm_gocode_binary_path = "$GOPATH/bin/gocode"
+let g:ycm_godef_binary_path = "$GOPATH/bin/godef"
 
 """"""""""""""""""""""""""""""""""""""""
 " General VIM

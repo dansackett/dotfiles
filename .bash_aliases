@@ -84,7 +84,7 @@ alias tunnel='bash ~/tunnel.sh'
 alias kill_tunnel='bash ~/tunnel.sh --kill'
 
 # Golang
-alias golint='$GOPATH/bin/golint '
+alias godoc_serve='godoc -http=:6060' # service golang docs locally
 
 # Python
 alias rmpyc='find . -name "*.pyc" -exec rm -rf {} \;'
