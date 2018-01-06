@@ -51,6 +51,7 @@ alias reboot='sudo reboot'
 alias shutoff='sudo shutdown -h now'
 
 # Utils
+alias volume='pavucontrol'
 alias open_dir='gnome-open .'
 alias home='cd ~'
 alias projects='cd ~/projects'
@@ -68,6 +69,7 @@ alias lipsum='echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
 alias dotfiles='cd ~/dotfiles'
 alias dotinstall='workon dotfiles && python ./build.py && cd -'
 alias secret_key='python -c "import random; print \"\".join([random.SystemRandom().choice(\"abcdefghijklmnopqrstuvwxyz0123456789\!\@\#\$\%\^\&\*\(\-\_\=\+\)\") for i in range(50)])" | xclip; echo "copied to clipboard";'
+alias vopen='vim $(fzf)'
 
 # Tmux
 alias t='tmux'

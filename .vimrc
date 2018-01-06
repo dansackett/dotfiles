@@ -7,11 +7,8 @@ filetype off
 " Plugins
 """"""""""""""""""""""""""""""""""""""""
 
-" vundle stuff
+" vim-plug
 call plug#begin('~/.vim/plugged')
-
-" vundle repo
-Plug 'VundleVim/Vundle.vim'
 
 " productivity
 Plug 'ervandew/supertab'

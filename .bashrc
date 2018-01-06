@@ -36,3 +36,5 @@ source ~/.bash_conditionals
 
 # Set PS1
 PS1="$NewLine$BIWhite$User$ColorOff on $BIWhite$Host$ColorOff in $BIBlue$PathShort$ColorOff \$(current_git_branch)$NewLine$BIWhite$LineOpener$ColorOff "
+
+export PATH="$HOME/.yarn/bin:$PATH"
