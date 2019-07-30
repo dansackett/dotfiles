@@ -9,6 +9,7 @@
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/go/bin:$PATH
+export PATH="$HOME/.yarn/bin:$PATH"
 
 # Add Golang path
 export GOPATH=~/golang
@@ -36,5 +37,3 @@ source ~/.bash_conditionals
 
 # Set PS1
 PS1="$NewLine$BIWhite$User$ColorOff on $BIWhite$Host$ColorOff in $BIBlue$PathShort$ColorOff \$(current_git_branch)$NewLine$BIWhite$LineOpener$ColorOff "
-
-export PATH="$HOME/.yarn/bin:$PATH"
