@@ -42,6 +42,7 @@ Plug 'saltstack/salt-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'mxw/vim-jsx'
+Plug 'w0rp/ale'
 
 " Enable project specifc .vimrc files
 Plug 'embear/vim-localvimrc'
@@ -110,6 +111,17 @@ set updatetime=100 " updates :GoInfo faster
 
 let g:ycm_gocode_binary_path = "$GOPATH/bin/gocode"
 let g:ycm_godef_binary_path = "$GOPATH/bin/godef"
+
+" ale
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
+
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\}
 
 """"""""""""""""""""""""""""""""""""""""
 " General VIM

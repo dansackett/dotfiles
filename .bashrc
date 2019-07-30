@@ -11,7 +11,7 @@ export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/go/bin:$PATH
 
 # Add Golang path
-export GOPATH="/var/lib/golang"
+export GOPATH=~/golang
 
 # History Details
 HISTCONTROL=ignoreboth
