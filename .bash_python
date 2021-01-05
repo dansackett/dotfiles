@@ -6,7 +6,8 @@
 export WORKON_HOME=~/.virtualenvs
 export PROJECT_HOME=~/projects
 export PIP_VIRTUALENV_BASE=~/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source ~/.local/bin/virtualenvwrapper.sh
 
 # Stop python from generating bytecode files
 export PYTHONDONTWRITEBYTECODE=1

@@ -7,6 +7,7 @@
 
 # Ensure user-installed binaries take precedence
 export PATH=/usr/local/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
 export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH="$HOME/.yarn/bin:$PATH"

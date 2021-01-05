@@ -2,9 +2,6 @@
 ##                              Bash Aliases                                 ##
 ###############################################################################
 
-# Defaults for mkvirtualenv
-alias mkvirtualenv="mkvirtualenv --no-site-packages --distribute"
-
 colorflag="--color"
 # Enable color support of many features
 if [ -x /usr/bin/dircolors ]; then
