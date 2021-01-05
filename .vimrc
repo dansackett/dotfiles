@@ -199,7 +199,7 @@ set foldlevel=99
 set wildmode=list:longest
 
 " clipboard fusion!
-set clipboard^=unnamed clipboard^=unnamedplus
+set clipboard=unnamedplus
 
 " Source the vimrc file after saving it.
 " This way, you don't have to reload Vim to see the changes.
