@@ -5,15 +5,16 @@
 # If not running interactively, don"t do anything
 [ -z "$PS1" ] && return
 
+# Add Golang path
+export GOPATH=~/golang
+
 # Ensure user-installed binaries take precedence
 export PATH=/usr/local/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/go/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 export PATH="$HOME/.yarn/bin:$PATH"
-
-# Add Golang path
-export GOPATH=~/golang
 
 # History Details
 HISTCONTROL=ignoreboth
