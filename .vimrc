@@ -12,8 +12,6 @@ call plug#begin('~/.vim/plugged')
 
 " productivity
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'vim-scripts/bufkill.vim'
 Plug 'kien/ctrlp.vim'
@@ -25,6 +23,9 @@ Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " misc
 Plug 'editorconfig/editorconfig-vim'
@@ -43,6 +44,12 @@ Plug 'rust-lang/rust.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'mxw/vim-jsx'
 Plug 'w0rp/ale'
+" Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
+Plug 'Exafunction/windsurf.vim', { 'branch': 'main' }
 
 " Enable project specifc .vimrc files
 Plug 'embear/vim-localvimrc'
@@ -72,6 +79,44 @@ else
     \ }
 endif
 
+if executable('pylsp')
+    " pip install python-lsp-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pylsp',
+        \ 'cmd': {server_info->['pylsp']},
+        \ 'allowlist': ['python'],
+        \ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+    
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
 " LESS Syntax
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
@@ -87,6 +132,11 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+
+" TSX syntax
+" autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " vim-go
 let g:go_fmt_command = "goimports"
@@ -108,9 +158,6 @@ let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_metalinter_deadline = "5s"
 let g:go_list_type = "quickfix"
 set updatetime=100 " updates :GoInfo faster
-
-let g:ycm_gocode_binary_path = "$GOPATH/bin/gocode"
-let g:ycm_godef_binary_path = "$GOPATH/bin/godef"
 
 " ale
 let g:ale_fix_on_save = 1

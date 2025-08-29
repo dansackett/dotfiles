@@ -33,7 +33,7 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias sudo="sudo "
 
 # Serve current working directory
-alias serve="python -m SimpleHTTPServer"
+alias serve="python3 -m http.server"
 
 # Make gvim act properly with menu nonsense
 alias gvim="UBUNTU_MENUPROXY= gvim"
